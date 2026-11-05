@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<title>Coming Soon — AuraCeiling</title>
+<meta name="description" content="We are launching soon. Stay tuned.">
+<script>
+  (function(){try{var t=localStorage.getItem('auraceiling-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';if(t==='dark')document.documentElement.classList.add('dark');var r=localStorage.getItem('auraceiling-rtl');if(r==='rtl')document.documentElement.setAttribute('dir','rtl');}catch(e){}})();
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'] },
+        colors: {
+          gold: { DEFAULT: '#C5A059', soft: '#A65A3E', light: '#E5C07B', dark: '#9E6747' },
+          bronze: { DEFAULT: '#423226', dark: '#261E1A', light: '#543F30' },
+          emerald: { DEFAULT: '#0B2D23', dark: '#08221A', light: '#112828' },
+          obsidian: { DEFAULT: '#0E0F12', dark: '#08080A', light: '#261F21' }
+        },
+        backgroundImage: {
+          'elite-sage': 'linear-gradient(135deg, #D0EAD7 0%, #4A5E3C 100%)',
+          'elite-bronze': 'linear-gradient(135deg, #D0EAD7 0%, #4A5E3C 100%)',
+          'elite-emerald': 'linear-gradient(135deg, #D0EAD7 0%, #4A5E3C 100%)',
+          'elite-obsidian': 'linear-gradient(135deg, #D0EAD7 0%, #4A5E3C 100%)'
+        }
+      }
+    }
+  };
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="assets/css/tailwind-custom.css">
+</head>
+<body class="bg-slate-950 text-white font-sans min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden">
+
+<div class="absolute inset-0"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80" alt="" class="w-full h-full object-cover opacity-20"><div class="absolute inset-0 bg-slate-950/80"></div></div>
+<div class="noise"></div>
+
+<div class="relative text-center max-w-3xl">
+  <div class="flex items-center justify-center gap-3 mb-8 group">
+  <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-slate-900/5 dark:bg-slate-800/50 p-1.5 shadow-sm border border-slate-200/60 dark:border-slate-700/60 transition-transform group-hover:scale-105">
+    <img src="assets/images/logo.png" alt="AuraCeiling Logo" class="h-full w-full object-contain">
+  </div>
+  <span class="text-2xl font-bold tracking-tight text-white">Aura<span class="text-amber-400">Ceiling</span></span>
+</div>
+  <h1 class="text-4xl sm:text-6xl font-extrabold">We're Launching Soon</h1>
+  <p class="mt-4 text-slate-300 text-lg">Our new experience is under construction. Stay tuned.</p>
+
+  <div class="mt-10 flex justify-center gap-4" data-countdown="2026-12-15T00:00:00">
+    <div class="countdown-box bg-white/5 backdrop-blur border border-white/10 rounded-2xl px-5 py-4 min-w-[70px] sm:min-w-[80px]">
+      <div class="text-3xl font-extrabold text-gold" data-cd="days">00</div>
+      <div class="text-xs text-slate-400 mt-1">Days</div>
+    </div>
+    <div class="countdown-box bg-white/5 backdrop-blur border border-white/10 rounded-2xl px-5 py-4 min-w-[70px] sm:min-w-[80px]">
+      <div class="text-3xl font-extrabold text-gold" data-cd="hours">00</div>
+      <div class="text-xs text-slate-400 mt-1">Hours</div>
+    </div>
+    <div class="countdown-box bg-white/5 backdrop-blur border border-white/10 rounded-2xl px-5 py-4 min-w-[70px] sm:min-w-[80px]">
+      <div class="text-3xl font-extrabold text-gold" data-cd="minutes">00</div>
+      <div class="text-xs text-slate-400 mt-1">Minutes</div>
+    </div>
+    <div class="countdown-box bg-white/5 backdrop-blur border border-white/10 rounded-2xl px-5 py-4 min-w-[70px] sm:min-w-[80px]">
+      <div class="text-3xl font-extrabold text-gold" data-cd="seconds">00</div>
+      <div class="text-xs text-slate-400 mt-1">Seconds</div>
+    </div>
+  </div>
+
+  <form data-newsletter class="mt-10 flex flex-col sm:flex-row gap-3 max-w-md mx-auto" novalidate>
+    <div class="flex-1 text-left">
+      <input type="email" placeholder="Enter your email" class="input-base w-full" required>
+      <p class="field-error hidden text-xs text-red-400 mt-1.5" data-error-for="email"></p>
+    </div>
+    <button type="submit" class="btn-gold px-6 py-3 rounded-xl text-sm h-fit self-start sm:self-auto">Notify Me</button>
+  </form>
+  <p data-newsletter-success class="hidden text-xs text-gold mt-3">You'll be notified!</p>
+
+  <div class="mt-8 flex justify-center gap-3">
+    <button class="theme-toggle p-2 rounded-lg bg-white/5 hover:bg-white/10 transition" aria-label="Toggle theme"><i data-lucide="sun" class="icon-sun w-5 h-5 hidden"></i><i data-lucide="moon" class="icon-moon w-5 h-5"></i></button>
+    <button class="rtl-toggle px-3 py-2 text-xs font-semibold rounded-lg border border-white/20 hover:border-gold transition" data-rtl-label>RTL</button>
+  </div>
+</div>
+
+<script src="assets/js/backend-validator.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -260,7 +260,7 @@
   function initLoginModal() {
     const modal = document.querySelector('[data-login-modal]');
     if (!modal) return;
-    const triggers = document.querySelectorAll('.login-toggle, [data-login-trigger]');
+    const triggers = document.querySelectorAll('[data-login-trigger]');
     const closeBtns = modal.querySelectorAll('[data-login-close]');
     const overlay = modal.querySelector('[data-login-overlay]');
 

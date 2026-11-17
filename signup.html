@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create account | AuraCeiling</title>
+  <meta name="description" content="Create your AuraCeiling portal account.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <script>
+    (function () { try { var t = localStorage.getItem('auraceiling-theme'); if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; if (t === 'dark') document.documentElement.classList.add('dark'); } catch (e) {} })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'] }, colors: { gold: '#C5A059' } } } };</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tailwind-custom.css">
+  <style>.auth-shell{background:radial-gradient(circle at 15% 15%,rgba(197,160,89,.18),transparent 34%),#071b16}.auth-card{box-shadow:0 28px 80px rgba(5,15,13,.18)}.field-error{min-height:1rem}</style>
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+  <main class="min-h-screen lg:grid lg:grid-cols-[.9fr_1.1fr]">
+    <section class="auth-shell relative hidden overflow-hidden p-12 text-white lg:flex lg:min-h-screen lg:flex-col lg:justify-between xl:p-16">
+      <a href="index.html" class="relative inline-flex w-fit" aria-label="AuraCeiling home"><img src="assets/images/logo.png" alt="AuraCeiling" class="h-14 w-auto rounded-xl object-contain"></a>
+      <div class="relative max-w-md"><span class="text-xs font-semibold uppercase tracking-[.22em] text-gold">Join AuraCeiling</span><h1 class="mt-5 text-4xl font-extrabold leading-tight xl:text-5xl">One place for every project detail.</h1><p class="mt-5 text-base leading-7 text-slate-300">Create your account to manage estimates, follow project updates, and stay connected with our team.</p><div class="mt-8 flex items-center gap-3 text-sm text-slate-300"><span class="h-2 w-2 rounded-full bg-gold"></span>Simple, secure project access</div></div>
+      <p class="relative text-xs text-slate-400">© 2026 AuraCeiling. All rights reserved.</p>
+    </section>
+    <section class="flex min-h-screen items-center justify-center px-5 py-8 sm:px-8">
+      <div class="w-full max-w-md"><a href="index.html" class="inline-flex lg:hidden" aria-label="AuraCeiling home"><img src="assets/images/logo.png" alt="AuraCeiling" class="h-11 w-auto rounded-lg object-contain"></a>
+        <div class="auth-card mt-6 rounded-3xl border border-slate-200 bg-white p-6 sm:p-9 dark:border-slate-800 dark:bg-slate-900 lg:mt-0">
+          <div class="text-center"><div class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/15 text-gold" aria-hidden="true">✦</div><h2 class="mt-5 text-2xl font-bold">Create your account</h2><p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Get started with your AuraCeiling portal</p></div>
+          <form id="signupForm" novalidate class="mt-7 space-y-3">
+            <div><label for="fullName" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">Full name</label><input id="fullName" name="fullName" type="text" autocomplete="name" required minlength="2" placeholder="Your full name" class="signup-field w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20 dark:border-slate-700 dark:bg-slate-800/60" aria-describedby="fullNameError"><p id="fullNameError" class="field-error mt-1 text-xs text-red-600" aria-live="polite"></p></div>
+            <div><label for="signupEmail" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">Email address</label><input id="signupEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com" class="signup-field w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20 dark:border-slate-700 dark:bg-slate-800/60" aria-describedby="signupEmailError"><p id="signupEmailError" class="field-error mt-1 text-xs text-red-600" aria-live="polite"></p></div>
+            <div><label for="signupPassword" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">Password</label><input id="signupPassword" name="password" type="password" autocomplete="new-password" required minlength="8" placeholder="At least 8 characters" class="signup-field w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20 dark:border-slate-700 dark:bg-slate-800/60" aria-describedby="signupPasswordError"><p id="signupPasswordError" class="field-error mt-1 text-xs text-red-600" aria-live="polite"></p></div>
+            <div><label for="confirmPassword" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">Confirm password</label><input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required placeholder="Re-enter your password" class="signup-field w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20 dark:border-slate-700 dark:bg-slate-800/60" aria-describedby="confirmPasswordError"><p id="confirmPasswordError" class="field-error mt-1 text-xs text-red-600" aria-live="polite"></p></div>
+            <label class="flex items-start gap-2 pt-1 text-xs leading-5 text-slate-500 dark:text-slate-400"><input id="terms" type="checkbox" required class="mt-1 rounded border-slate-300 text-gold focus:ring-gold/30"><span>I agree to the <a href="#" class="font-semibold text-gold hover:underline">Terms of Service</a> and <a href="#" class="font-semibold text-gold hover:underline">Privacy Policy</a>.</span></label>
+            <p id="termsError" class="field-error text-xs text-red-600" aria-live="polite"></p><button type="submit" class="w-full rounded-xl bg-gold px-4 py-3 text-sm font-bold text-slate-950 shadow-md transition hover:bg-[#b8904b]">Create account <span aria-hidden="true">→</span></button><p id="signupSuccess" class="hidden rounded-lg bg-emerald-50 px-3 py-2 text-center text-xs text-emerald-700" role="status"></p>
+          </form>
+          <p class="mt-6 text-center text-sm text-slate-500 dark:text-slate-400">Already have an account? <a href="login.html" class="font-semibold text-gold hover:underline">Sign in</a></p><a href="index.html" class="mt-5 flex items-center justify-center gap-2 text-xs font-medium text-slate-400 transition hover:text-gold">← Back to AuraCeiling</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var form = document.getElementById('signupForm'), terms = document.getElementById('terms');
+      var fields = { fullName: ['fullName', 'fullNameError'], email: ['signupEmail', 'signupEmailError'], password: ['signupPassword', 'signupPasswordError'], confirmPassword: ['confirmPassword', 'confirmPasswordError'] };
+      function error(key, message) { var input = document.getElementById(fields[key][0]), target = document.getElementById(fields[key][1]); target.textContent = message; input.setAttribute('aria-invalid', message ? 'true' : 'false'); input.classList.toggle('border-red-500', !!message); }
+      function validate() { var name = document.getElementById('fullName').value.trim(), email = document.getElementById('signupEmail').value.trim(), password = document.getElementById('signupPassword').value, confirm = document.getElementById('confirmPassword').value; error('fullName', name.length < 2 ? 'Please enter your full name.' : ''); error('email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? '' : 'Enter a valid email address.'); error('password', password.length < 8 ? 'Password must be at least 8 characters.' : (!/[A-Za-z]/.test(password) || !/[0-9]/.test(password) ? 'Use at least one letter and one number.' : '')); error('confirmPassword', !confirm || confirm !== password ? 'Passwords do not match.' : ''); document.getElementById('termsError').textContent = terms.checked ? '' : 'Please accept the terms to continue.'; return !document.querySelector('.field-error:not(:empty)'); }
+      Object.keys(fields).forEach(function (key) { document.getElementById(fields[key][0]).addEventListener('input', validate); document.getElementById(fields[key][0]).addEventListener('blur', validate); }); terms.addEventListener('change', validate);
+      form.addEventListener('submit', function (event) { event.preventDefault(); var success = document.getElementById('signupSuccess'); if (!validate()) { success.classList.add('hidden'); return; } success.textContent = 'Account details validated. Connect your authentication service to finish registration.'; success.classList.remove('hidden'); });
+    })();
+  </script>
+</body>
+</html>

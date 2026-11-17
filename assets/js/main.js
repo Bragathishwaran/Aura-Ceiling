@@ -49,12 +49,26 @@
     document.querySelectorAll('.rtl-toggle').forEach((el) => {
       el.setAttribute('aria-label', isRtl ? 'Switch to Left-to-Right (LTR)' : 'Switch to Right-to-Left (RTL)');
       el.setAttribute('title', isRtl ? 'Switch to LTR' : 'Switch to RTL');
+      const iconLtr = el.querySelector('.icon-ltr');
+      const iconRtl = el.querySelector('.icon-rtl');
+      if (iconLtr && iconRtl) {
+        if (isRtl) {
+          iconLtr.classList.add('hidden');
+          iconRtl.classList.remove('hidden');
+        } else {
+          iconLtr.classList.remove('hidden');
+          iconRtl.classList.add('hidden');
+        }
+      }
       if (isRtl) {
         el.classList.add('text-gold', 'bg-slate-100', 'dark:bg-slate-800');
       } else {
         el.classList.remove('text-gold', 'bg-slate-100', 'dark:bg-slate-800');
       }
     });
+    if (window.lucide && typeof lucide.createIcons === 'function') {
+      lucide.createIcons();
+    }
   }
   function toggleRTL() {
     const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
@@ -239,6 +253,42 @@
       if (window.innerWidth >= 1024 && menu.classList.contains('open')) {
         close();
       }
+    });
+  }
+
+  /* ---------- Login modal ---------- */
+  function initLoginModal() {
+    const modal = document.querySelector('[data-login-modal]');
+    if (!modal) return;
+    const triggers = document.querySelectorAll('.login-toggle, [data-login-trigger]');
+    const closeBtns = modal.querySelectorAll('[data-login-close]');
+    const overlay = modal.querySelector('[data-login-overlay]');
+
+    const openModal = (e) => {
+      if (e) e.preventDefault();
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      const input = modal.querySelector('input');
+      if (input) input.focus();
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+      }
+    };
+
+    const closeModal = () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    triggers.forEach((btn) => btn.addEventListener('click', openModal));
+    closeBtns.forEach((btn) => btn.addEventListener('click', closeModal));
+    if (overlay) overlay.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
     });
   }
 
@@ -945,6 +995,7 @@
 
     initDropdowns();
     initMobileMenu();
+    initLoginModal();
     initHeaderScroll();
     initAccordion();
     initFilters();
